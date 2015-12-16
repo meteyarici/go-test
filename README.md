@@ -1,0 +1,2 @@
+# goTest
+Fist golang application
