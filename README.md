@@ -1,2 +1,3 @@
-# goTest
-Fist golang application
+# Simple Go service with standart http object
+
+
