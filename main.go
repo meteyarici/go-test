@@ -1,32 +1,24 @@
-  package main
-          import (
-                  “fmt” 
-                  “log” 
-                  “net/http” 
-                  “strconv” 
-                 )
-                  
-func main() { 
+package util
 
-  http.HandleFunc(“/”, func(w http.ResponseWriter, r *http.Request) { 
+import (
+	"crypto/md5"
+	"crypto/sha256"
+	"github.com/google/uuid"
+	"testing"
+)
 
-    s := r.URL.Query().Get(“s”)
-    i , _:= strconv.Atoi(s) 
+func BenchmarkSha256(b *testing.B) {
+	target := []byte(uuid.New().String())
+	b.ResetTimer()
+	for n := 0; n < b.N; n++ {
+		sha256.Sum256(target)
+	}
+}
 
-    if(i != 0) {
-
-      if i%400 == 0 {
-          fmt.Fprintln(w, s + “ artık yıl”) 
-        } else if i%100 == 0{
-          fmt.Fprintln(w, s +” artık yıl”)
-        } else if i%4==0 {
-          fmt.Fprintln(w, s +” artık yıl”)
-        } else {
-          fmt.Fprintln(w, s +” artık yıl değil”)
-        }
-              }
-      })
-
-        log.Fatal(http.ListenAndServe(“:8080”, nil)) 
-  
+func BenchmarkMd5(b *testing.B) {
+	target := []byte(uuid.New().String())
+	b.ResetTimer()
+	for n := 0; n < b.N; n++ {
+		md5.Sum(target)
+	}
 }
