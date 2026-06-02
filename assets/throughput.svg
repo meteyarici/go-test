@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="760" height="420" fill="#0f172a"/>
+  <text x="380" y="30" fill="#e2e8f0" font-size="20" font-weight="700" text-anchor="middle">Hash Throughput by Input Size (MB/s, higher is better)</text>
+
+  <!-- legend -->
+  <g font-size="13" fill="#cbd5e1">
+    <rect x="250" y="44" width="14" height="14" rx="2" fill="#60a5fa"/><text x="270" y="56">64 B</text>
+    <rect x="330" y="44" width="14" height="14" rx="2" fill="#34d399"/><text x="350" y="56">1 KB</text>
+    <rect x="410" y="44" width="14" height="14" rx="2" fill="#fbbf24"/><text x="430" y="56">1 MB</text>
+  </g>
+
+  <!-- gridlines + y labels -->
+  <g stroke="#1e293b" stroke-width="1">
+    <line x1="70" y1="320" x2="740" y2="320"/>
+    <line x1="70" y1="270" x2="740" y2="270"/>
+    <line x1="70" y1="220" x2="740" y2="220"/>
+    <line x1="70" y1="170" x2="740" y2="170"/>
+    <line x1="70" y1="120" x2="740" y2="120"/>
+    <line x1="70" y1="70"  x2="740" y2="70"/>
+  </g>
+  <g fill="#64748b" font-size="12" text-anchor="end">
+    <text x="60" y="324">0</text>
+    <text x="60" y="274">300</text>
+    <text x="60" y="224">600</text>
+    <text x="60" y="174">900</text>
+    <text x="60" y="124">1200</text>
+    <text x="60" y="74">1500</text>
+  </g>
+
+  <!-- bars: MD5 -->
+  <rect x="93.75"  y="253" width="36" height="67"  rx="3" fill="#60a5fa"/>
+  <rect x="135.75" y="182" width="36" height="138" rx="3" fill="#34d399"/>
+  <rect x="177.75" y="172" width="36" height="148" rx="3" fill="#fbbf24"/>
+  <!-- bars: SHA-1 -->
+  <rect x="261.25" y="264" width="36" height="56"  rx="3" fill="#60a5fa"/>
+  <rect x="303.25" y="134" width="36" height="186" rx="3" fill="#34d399"/>
+  <rect x="345.25" y="81"  width="36" height="239" rx="3" fill="#fbbf24"/>
+  <!-- bars: SHA-256 -->
+  <rect x="428.75" y="282" width="36" height="38"  rx="3" fill="#60a5fa"/>
+  <rect x="470.75" y="231" width="36" height="89"  rx="3" fill="#34d399"/>
+  <rect x="512.75" y="222" width="36" height="98"  rx="3" fill="#fbbf24"/>
+  <!-- bars: SHA-512 -->
+  <rect x="596.25" y="262" width="36" height="58"  rx="3" fill="#60a5fa"/>
+  <rect x="638.25" y="193" width="36" height="127" rx="3" fill="#34d399"/>
+  <rect x="680.25" y="173" width="36" height="147" rx="3" fill="#fbbf24"/>
+
+  <!-- value labels -->
+  <g fill="#94a3b8" font-size="10" text-anchor="middle">
+    <text x="111.75" y="247">404</text><text x="153.75" y="176">830</text><text x="195.75" y="166">887</text>
+    <text x="279.25" y="258">337</text><text x="321.25" y="128">1114</text><text x="363.25" y="75">1431</text>
+    <text x="446.75" y="276">231</text><text x="488.75" y="225">533</text><text x="530.75" y="216">589</text>
+    <text x="614.25" y="256">346</text><text x="656.25" y="187">762</text><text x="698.25" y="167">879</text>
+  </g>
+
+  <!-- x group labels -->
+  <g fill="#e2e8f0" font-size="14" font-weight="600" text-anchor="middle">
+    <text x="153.75" y="342">MD5</text>
+    <text x="321.25" y="342">SHA-1</text>
+    <text x="488.75" y="342">SHA-256</text>
+    <text x="656.25" y="342">SHA-512</text>
+  </g>
+
+  <text x="380" y="402" fill="#475569" font-size="11" text-anchor="middle">AMD Ryzen 5 5600G · linux/amd64 · go test -bench=. -benchmem</text>
+</svg>
